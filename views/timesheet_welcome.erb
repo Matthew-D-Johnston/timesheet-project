@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Timesheet Manager</title>
+    <meta charset="utf-8" />
+    <style>
+      h1 {
+        text-align: center;
+      }
+
+      .buttons {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100px;
+      }
+
+      button {
+        margin-right: 30px;
+      }
+
+    </style>
+  </head>
+  <body>
+    <h1>Welcome to the Timesheet Manager</h1>
+    <div class="buttons">
+      <form method="get" action="/input_time">
+        <button name="input_time" type="submit">Input Time</button>
+      </form>
+      <form method="get" action="create_invoice">
+        <button name="create_invoice" type="submit">Create Invoice</button>
+      </form>
+      <form method="get" action="create_report">
+        <button name="create_report" type="submit">Create Monthly Report</button>
+      </form>
+    </div>
+  </body>
+</html>
