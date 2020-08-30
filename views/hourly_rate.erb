@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Timesheet Manager</title>
+    <meta charset="utf-8" />
+    <style>
+      h1 {
+        text-align: center;
+      }
+
+      input {
+        margin-top: 20px;
+      }
+
+      .form-data {
+        text-align: center;
+      }
+
+      .button {
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Hourly Rate</h1>
+    </header>
+    <main>
+      <div class="form-data">
+        <form method="post" action="/hourly_rate">
+          <label for="hourly_rate">Hourly Rate $
+            <input name="hourly_rate">
+          </label>
+          <br/>
+          <label for="hours"># of Hours:
+            <input name="hours" />
+          </label>
+          <br/>
+          <button class="button" type="submit">Submit</button>
+        </form>
+      </div>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Timesheet Manager</title>
+    <meta charset="utf-8" />
+    <style>
+      h1 {
+        text-align: center;
+      }
+
+      .form-data {
+        text-align: center;
+        margin-top: 50px;
+      }
+
+      .button {
+        margin-top: 15px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Timesheet Data Input</h1>
+    </header>
+    <main>
+      <div class="form-data">
+        <form method="post" action="/time_input">
+          <section class="article-details">
+            <h2>Article Details</h2>
+            <label for="article_name">Article Name:
+              <input name="article_name" />
+            </label>
+            <label for="url">URL:
+              <input name="url" />
+            </label>
+            <label for="word_count">Word Count:
+              <input name="word_count">
+            </label>
+          </section>
+          <br/>
+          <section class="date">
+            <h2>Date Published</h2>
+            <label for="day">Day:
+              <input name="day" />
+            </label>
+            <label for="month">Month:
+              <input name="month" />
+            </label>
+            <label for="year">Year:
+              <input name="year" />
+            </label>
+          </section>
+          <br/>
+          <section class="payment-details">
+            <h2>Payment Details</h2>
+            <button class="button" type="submit" name="cc_credit">CC Credit</button>
+            <button class="button" type="submit" name="flat_rate">Flate Rate</button>
+            <button class="button" type="submit" name="hourly_rate">Hourly Rate</button>
+          </section>
+        </form>
+      </div>
+    </main>
+  </body>
+</html>

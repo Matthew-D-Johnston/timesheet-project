@@ -22,17 +22,21 @@
     </style>
   </head>
   <body>
-    <h1>Welcome to the Timesheet Manager</h1>
-    <div class="buttons">
-      <form method="get" action="/input_time">
-        <button name="input_time" type="submit">Input Time</button>
-      </form>
-      <form method="get" action="create_invoice">
-        <button name="create_invoice" type="submit">Create Invoice</button>
-      </form>
-      <form method="get" action="create_report">
-        <button name="create_report" type="submit">Create Monthly Report</button>
-      </form>
-    </div>
+    <header>
+      <h1>Welcome to the Timesheet Manager</h1>
+    </header>
+    <main>
+      <div class="buttons">
+        <form method="get" action="/input_time">
+          <button name="input_time" type="submit">Input Time</button>
+        </form>
+        <form method="get" action="create_invoice">
+          <button name="create_invoice" type="submit">Create Invoice</button>
+        </form>
+        <form method="get" action="create_report">
+          <button name="create_report" type="submit">Create Monthly Report</button>
+        </form>
+      </div>
+    </main>
   </body>
 </html>
