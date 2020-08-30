@@ -8,6 +8,10 @@
         text-align: center;
       }
 
+      button {
+        margin-right: 30px;
+      }
+
       .buttons {
         display: flex;
         justify-content: center;
@@ -15,8 +19,9 @@
         height: 100px;
       }
 
-      button {
-        margin-right: 30px;
+      .flash-message {
+        color: #33cc99;
+        background: #CBF2E5;
       }
 
     </style>
@@ -24,6 +29,11 @@
   <body>
     <header>
       <h1>Welcome to the Timesheet Manager</h1>
+      <% if session[:message] %>
+      <div class="flash-message">
+        <p><%= session.delete(:message) %></p>
+      </div>
+    <% end %>
     </header>
     <main>
       <div class="buttons">

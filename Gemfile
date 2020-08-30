@@ -8,4 +8,6 @@ gem "erubis"
 
 gem "pg"
 
+gem "date"
+
 gem "pry"

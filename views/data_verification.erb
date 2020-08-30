@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Timesheet Manager</title>
+    <meta charset="utf-8" />
+  </head>
+  <body>
+    <header>
+      <h1>Timesheet Input Verification</h1>
+    </header>
+    <main>
+      <ul>
+        <li>Article Name: <%= session[:article_name] %></li>
+        <li>URL: <%= session[:url] %></li>
+        <li>Word Count: <%= session[:word_count] %></li>
+        <li>Date Published: <%= Date::MONTHNAMES[session[:month].to_i] %> <%= session[:day] %>, <%= session[:year] %></li>
+        <li>CC Credit: <%= session[:cc_credits] %></li>
+        <li>Flat Rate: <%= session[:flat_rate] %></li>
+        <li>Hours: <%= session[:hours] %></li>
+        <li>Hourly Rate: <%= session[:hourly_rate] %></li>
+        <li>Amount: <%= session[:amount] %></li>
+      </ul>
+      <form method="post" action="/input_verified_data">
+        <p>Is the data correct?</p>
+        <button type="submit" name="yes">Yes, update the database with the above data.</button>
+        <button type="submit" name="no">No, return to the data input page.</button>
+      </form>
+    </main>
+  </body>
+</html>

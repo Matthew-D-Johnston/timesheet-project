@@ -28,35 +28,40 @@
           <section class="article-details">
             <h2>Article Details</h2>
             <label for="article_name">Article Name:
-              <input name="article_name" />
+              <input name="article_name" id="article_name" />
             </label>
             <label for="url">URL:
-              <input name="url" />
+              <input name="url" id="url" />
             </label>
             <label for="word_count">Word Count:
-              <input name="word_count">
+              <input name="word_count" id="word_count" />
             </label>
           </section>
           <br/>
           <section class="date">
             <h2>Date Published</h2>
             <label for="day">Day:
-              <input name="day" />
+              <input name="day" id="day" />
             </label>
             <label for="month">Month:
-              <input name="month" />
+              <input name="month" id="month" />
             </label>
-            <label for="year">Year:
-              <input name="year" />
+            <label for="year" >Year:
+              <input name="year" id="year" />
             </label>
           </section>
           <br/>
           <section class="payment-details">
             <h2>Payment Details</h2>
-            <button class="button" type="submit" name="cc_credit">CC Credit</button>
-            <button class="button" type="submit" name="flat_rate">Flate Rate</button>
-            <button class="button" type="submit" name="hourly_rate">Hourly Rate</button>
+            <label for="payment_details">Choose a payment type:</label>
+            <select name="payment_type" id="payment_details">
+              <option value="">--Please choose an option--</option>
+              <option value="cc_credit">CC Credit</option>
+              <option value="flat_rate">Flat Rate</option>
+              <option value="hourly_rate">Hourly Rate</option>
+            </select>
           </section>
+          <button class="button" type="submit">Submit</button>
         </form>
       </div>
     </main>
