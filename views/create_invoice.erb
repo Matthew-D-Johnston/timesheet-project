@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Timesheet Manager</title>
+    <meta charset="utf-8" />
+    <style>
+      h1 {
+        text-align: center;
+      }
+
+      .form-data {
+        text-align: center;
+      }
+
+      .button {
+        margin-top: 15px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Create Invoice</h1>
+    </header>
+    <main>
+      <div class="form-data">
+        <form method="post" action="/create_invoice">
+          <label for="invoice_number">Invoice Number:
+            <input name="invoice_number" id="invoice_number" />
+          </label>
+          <br/>
+          <label for="invoice_month">Invoice Month:</label>
+            <select name="invoice_month" id="invoice_month">
+              <option value="">--Please choose a month--</option>
+              <option value="january">January</option>
+              <option value="february">February</option>
+              <option value="march">March</option>
+              <option value="april">April</option>
+              <option value="may">May</option>
+              <option value="june">June</option>
+              <option value="july">July</option>
+              <option value="august">August</option>
+              <option value="september">September</option>
+              <option value="october">October</option>
+              <option value="november">November</option>
+              <option value="december">December</option>
+            </select>
+          <br/>
+          <button class="button" type="submit">Submit</button>
+        </form>
+      </div>
+    </main>
+  </body>
+</html>

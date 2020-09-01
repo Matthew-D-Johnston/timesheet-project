@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Timesheet Manager</title>
+    <meta charset="utf-8" />
+    <style>
+      html {
+        font-family: Arial, sans serif;
+      }
+
+      header {
+        box-sizing: border-box;
+        display: inline-block;
+        width: 816px;
+        /*border: 1px solid black;*/
+      }
+
+
+
+      .my-details {
+        /*border: 1px solid black;*/
+        box-sizing: border-box;
+        display: inline-block;
+        width: 25%;
+        margin-left: 5%;
+      }
+
+      .invoice-details {
+        /*border: 1px solid black;*/
+        box-sizing: border-box;
+        display: inline-block;
+        width: 45%;
+        vertical-align: top;
+        margin-left: 20%;
+        padding-top: 0;
+        margin-top: 0;
+      }
+
+      .invoice-table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+
+      .table-header {
+        background-color: #97B7F5;
+      }
+
+      .billing-address {
+        box-sizing: border-box;
+        display: inline-block;
+        width: 25%;
+        margin-left: 4%;
+        margin-top: 0;
+        padding-top: 0;
+        /*border: 1px solid black;*/
+        padding-left: 1%;
+      }
+
+      #my-name {
+        font-size: 1.5rem;
+        margin-top: 0;
+      }
+
+      #invoice-title {
+        font-size: 2.5rem;
+        text-align: right;
+        margin-top: 0;
+        margin-bottom: 20px;
+        font-weight: bold;
+        color: #8BA0F5;
+      }
+
+      #table-head-invoice {
+        border: 1px solid black;
+      }
+
+      #table-head-date {
+        border: 1px solid black;
+      }
+
+      #table-row-invoice {
+        text-align: center;
+        border: 1px solid black;
+      }
+
+      #table-row-date {
+        text-align: center;
+        border: 1px solid black;
+      }
+
+      #billing-title {
+        border: 1px solid black;
+        width: 150px;
+        padding-right: 50px;
+        padding-left: 7px;
+        padding-top: 2px;
+        margin-left: 4%;
+        margin-top: 30px;
+        margin-bottom: 0;
+        font-weight: bold;
+        background-color: #97B7F5;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="my-details">
+        <p id="my-name">Matthew Johnston</p>
+        <p>100 Hadati Rd.
+          <br/>
+          Guelph, ON, Canada
+          <br/>
+          Phone: (514) 268-2615
+        </p>
+      </div>
+      <div class="invoice-details">
+        <section id="invoice-title">INVOICE</section>
+        <table class="invoice-table">
+          <tr class="table-header">
+            <th id="table-head-invoice">INVOICE #</th>
+            <th id="table-head-date">DATE</th>
+          </tr>
+          <tr>
+            <td id="table-row-invoice">0008</td>
+            <td id="table-row-date">05/03/2020</td>
+          </tr>
+        </table>
+      </div>
+      <div>
+        <p>
+          <div id="billing-title">BILL TO</div>
+          <div class="billing-address">
+            Dotdash/Investopedia
+            <br/>
+            1500 Broadway
+            <br/>
+            New York, NY 10036
+            <br/>
+          </div>
+        </p>
+      </div>
+    </header>
+    <main>
+    </main>
+  </body>
+</html>

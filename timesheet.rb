@@ -25,6 +25,12 @@ after do
   @storage.disconnect
 end
 
+def create_invoice_number(number)
+  number = number.to_i
+
+  "%04d" % number
+end
+
 get "/" do
   redirect "/timesheet"
 end
@@ -54,11 +60,17 @@ get "/data_verification" do
 end
 
 get "/create_invoice" do
-
+  erb :create_invoice
 end
 
 get "/create_report" do
 
+end
+
+get "/invoice" do
+  @invoice_number = create_invoice_number(session[:invoice_number])
+
+  erb :invoice
 end
 
 post "/time_input" do
@@ -128,9 +140,16 @@ post "/input_verified_data" do
     @storage.add_article_to_timesheet_database(article_name, url, date_published, word_count, cc_credit, flat_rate, hours, hourly_rate, amount)
 
     session[:message] = "Data was successfully added to the timesheet database."
-    
+
     redirect "/timesheet"
   else
     redirect "/input_time"
   end
+end
+
+post "/create_invoice" do
+  session[:invoice_number] = params[:invoice_number]
+  session[:invoice_month] = params[:invoice_month]
+
+  redirect "/invoice"
 end
