@@ -68,7 +68,17 @@ get "/create_report" do
 end
 
 get "/invoice" do
+  time = Time.now
+  day = "%02d" % time.day
+  month = "%02d" % time.month
+  year = time.year
+
+  @current_date = "#{month}/#{day}/#{year}"
   @invoice_number = create_invoice_number(session[:invoice_number])
+
+  # binding.pry
+  @article_data = @storage.find_invoice_data(session[:invoice_month])
+  @article_total_amount = @storage.find_invoice_total_amount(session[:invoice_month])
 
   erb :invoice
 end

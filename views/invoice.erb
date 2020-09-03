@@ -6,16 +6,15 @@
     <style>
       html {
         font-family: Arial, sans serif;
+        width: 816px;
       }
 
       header {
         box-sizing: border-box;
         display: inline-block;
-        width: 816px;
+        width: 100%;
         /*border: 1px solid black;*/
       }
-
-
 
       .my-details {
         /*border: 1px solid black;*/
@@ -55,6 +54,53 @@
         /*border: 1px solid black;*/
         padding-left: 1%;
       }
+
+      .article-table {
+        width: 90%;
+        border-collapse: collapse;
+        text-align: center;
+        margin: 40px 4% 0 4%;
+      }
+
+      .article-table-header th {
+        border: 1px solid black;
+      }
+
+      .article-description {
+        width: 68%;
+      }
+
+      .article-rate {
+        width: 10%;
+      }
+
+      .article-hours {
+        width: 10%;
+      }
+
+      .article-amount {
+        width: 12%;
+      }
+
+      /*.article-table-footer th {
+        border: 1px solid black;
+      }*/
+
+      .article-data td {
+        border: 1px solid black;
+      }
+
+      .article-total {
+        border: 1px solid black;
+      }
+
+      /*.article-thanks {
+        width: 88%;
+      }
+
+      .article-total {
+        width: 12%;
+      }*/
 
       #my-name {
         font-size: 1.5rem;
@@ -121,26 +167,63 @@
             <th id="table-head-date">DATE</th>
           </tr>
           <tr>
-            <td id="table-row-invoice">0008</td>
-            <td id="table-row-date">05/03/2020</td>
+            <td id="table-row-invoice"><%= @invoice_number %></td>
+            <td id="table-row-date"><%= @current_date %></td>
           </tr>
         </table>
       </div>
       <div>
-        <p>
-          <div id="billing-title">BILL TO</div>
-          <div class="billing-address">
-            Dotdash/Investopedia
-            <br/>
-            1500 Broadway
-            <br/>
-            New York, NY 10036
-            <br/>
-          </div>
-        </p>
+        <div id="billing-title">BILL TO</div>
+        <div class="billing-address">
+          Dotdash/Investopedia
+          <br/>
+          1500 Broadway
+          <br/>
+          New York, NY 10036
+          <br/>
+        </div>
       </div>
     </header>
     <main>
+      <table class="article-table">
+        <thead>
+          <tr class="article-table-header">
+            <th class="article-description">Description</th>
+            <th class="article-rate">Rate</th>
+            <th class="article-hours">Hours</th>
+            <th class="article-amount">Amount</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @article_data.each do |tuple| %>
+            <tr class="article-data">
+              <td class="name-url">
+                "<%= tuple["article_name"] %>"
+                <a href="<%= tuple["url"] %>"><%= tuple["url"] %></a>
+              </td>
+              <% if tuple["hourly_rate"] == "0.00" %>
+                <td class="hourly-rate">N/A</td>
+                <td class="hours">N/A</td>
+              <% else %>
+                <td class="hourly-rate">$<%= tuple["hourly_rate"] %>/hr</td>
+                <td class="hours"><%= tuple["hours"] %> hrs</td>
+              <% end %>
+              <td class="amount">$<%= tuple["amount"] %></td>
+            </tr>
+          <% end %>
+        </tbody>
+        <tfoot>
+          <tr class="article-table-footer">
+            <td class="article-thanks"><i>Thank you for your business!</i></td>
+            <td></td>
+            <td></td>
+            <td class="article-total">
+              <b>Total:</b>
+              $<%= @article_total_amount %>
+            </td>
+          </tr>
+        </tfoot>
+      </table>
     </main>
   </body>
 </html>
