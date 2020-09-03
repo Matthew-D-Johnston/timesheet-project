@@ -76,9 +76,8 @@ get "/invoice" do
   @current_date = "#{month}/#{day}/#{year}"
   @invoice_number = create_invoice_number(session[:invoice_number])
 
-  # binding.pry
-  @article_data = @storage.find_invoice_data(session[:invoice_month])
-  @article_total_amount = @storage.find_invoice_total_amount(session[:invoice_month])
+  @article_data = @storage.find_invoice_data(session[:invoice_month], session[:invoice_year])
+  @article_total_amount = @storage.find_invoice_total_amount(session[:invoice_month], session[:invoice_year])
 
   erb :invoice
 end
@@ -139,7 +138,7 @@ post "/input_verified_data" do
   if params[:yes]
     article_name = session[:article_name]
     url = session[:url]
-    date_published = "#{session[:day]}/#{session[:month]}/#{session[:year]}"
+    date_published = "#{session[:month]}/#{session[:day]}/#{session[:year]}"
     word_count = session[:word_count]
     cc_credit = session[:cc_credits]
     flat_rate = session[:flat_rate]
@@ -159,6 +158,7 @@ end
 
 post "/create_invoice" do
   session[:invoice_number] = params[:invoice_number]
+  session[:invoice_year] = params[:invoice_year]
   session[:invoice_month] = params[:invoice_month]
 
   redirect "/invoice"
