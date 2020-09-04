@@ -67,18 +67,22 @@
       }
 
       .article-description {
+        background-color: #DFDCFF;
         width: 68%;
       }
 
       .article-rate {
+        background-color: #DFDCFF;
         width: 10%;
       }
 
       .article-hours {
+        background-color: #DFDCFF;
         width: 10%;
       }
 
       .article-amount {
+        background-color: #DFDCFF;
         width: 12%;
       }
 
@@ -211,10 +215,8 @@
               <td class="amount">$<%= tuple["amount"] %></td>
             </tr>
           <% end %>
-        </tbody>
-        <tfoot>
           <tr class="article-table-footer">
-            <td class="article-thanks"><i>Thank you for your business!</i></td>
+            <td class="article-thanks"><i><b>Thank you for your business!</b></i></td>
             <td></td>
             <td></td>
             <td class="article-total">
@@ -222,7 +224,7 @@
               $<%= @article_total_amount %>
             </td>
           </tr>
-        </tfoot>
+        </tbody>
       </table>
     </main>
   </body>

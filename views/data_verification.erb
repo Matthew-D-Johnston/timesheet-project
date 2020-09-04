@@ -10,18 +10,18 @@
     </header>
     <main>
       <ul>
-        <li>Article Name: <%= session[:article_name] %></li>
-        <li>URL: <%= session[:url] %></li>
-        <li>Word Count: <%= session[:word_count] %></li>
-        <li>Date Published: <%= Date::MONTHNAMES[session[:month].to_i] %> <%= session[:day] %>, <%= session[:year] %></li>
-        <li>CC Credit: <%= session[:cc_credits] %></li>
-        <li>Flat Rate: <%= session[:flat_rate] %></li>
-        <li>Hours: <%= session[:hours] %></li>
-        <li>Hourly Rate: <%= session[:hourly_rate] %></li>
-        <li>Amount: <%= session[:amount] %></li>
+        <li><b>Article Name:</b> <%= session[:article_name] %></li>
+        <li><b>URL:</b> <%= session[:url] %></li>
+        <li><b>Word Count:</b> <%= session[:word_count] %></li>
+        <li><b>Date Published:</b> <%= Date::MONTHNAMES[session[:month].to_i] %> <%= session[:day] %>, <%= session[:year] %></li>
+        <li><b>CC Credit:</b> <%= session[:cc_credits] %></li>
+        <li><b>Flat Rate:</b> <%= session[:flat_rate] %></li>
+        <li><b>Hours:</b> <%= session[:hours] %></li>
+        <li><b>Hourly Rate:</b> <%= session[:hourly_rate] %></li>
+        <li><b>Amount:</b> <%= session[:amount] %></li>
       </ul>
       <form method="post" action="/input_verified_data">
-        <p>Is the data correct?</p>
+        <p><b>Are the data correct?</b></p>
         <button type="submit" name="yes">Yes, update the database with the above data.</button>
         <button type="submit" name="no">No, return to the data input page.</button>
       </form>
