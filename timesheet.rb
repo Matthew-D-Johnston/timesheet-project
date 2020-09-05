@@ -64,7 +64,7 @@ get "/create_invoice" do
 end
 
 get "/create_report" do
-
+  erb :create_report
 end
 
 get "/invoice" do
@@ -80,6 +80,12 @@ get "/invoice" do
   @article_total_amount = @storage.find_invoice_total_amount(session[:invoice_month], session[:invoice_year])
 
   erb :invoice
+end
+
+get "/monthly_report" do
+  @month_name = Date::MONTHNAMES[session[:report_month].to_i]
+
+  erb :monthly_report
 end
 
 post "/time_input" do
@@ -162,4 +168,11 @@ post "/create_invoice" do
   session[:invoice_month] = params[:invoice_month]
 
   redirect "/invoice"
+end
+
+post "/create_report" do
+  session[:report_year] = params[:report_year]
+  session[:report_month] = params[:report_month]
+
+  redirect "/monthly_report"
 end
