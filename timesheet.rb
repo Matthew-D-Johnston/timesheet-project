@@ -31,6 +31,14 @@ def create_invoice_number(number)
   "%04d" % number
 end
 
+def add_commas_to_numeric_amounts(number)
+  case number.length
+  when (0..6) then number
+  when (7..9) then number.insert(-7, ',')
+  when (10..12) then number.insert(-10, ',').insert(-7, ',')
+  end
+end
+
 get "/" do
   redirect "/timesheet"
 end
@@ -78,7 +86,8 @@ get "/invoice" do
 
   @article_data = @storage.find_invoice_data(session[:invoice_month], session[:invoice_year])
   @article_total_amount = @storage.find_invoice_total_amount(session[:invoice_month], session[:invoice_year])
-
+  @article_total_amount = add_commas_to_numeric_amounts(@article_total_amount)
+  
   erb :invoice
 end
 
